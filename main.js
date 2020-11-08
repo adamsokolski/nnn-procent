@@ -1,4 +1,5 @@
 let now = new Date();
+let alertBox = document.querySelector('#alert-box');
 
 if (now.getMonth() == 10) {
     
@@ -12,16 +13,37 @@ if (now.getMonth() == 10) {
     let progressBar = document.querySelector("#bar1");
     let progressBarRemain = document.querySelector("#bar2");
 
+    let procentPassed;
+    let procentRemain;
+    
+    setInterval(() => {
+        let newNow = new Date();
+        let day = newNow.getDate() * 60 * 60 * 24;
+        let hour = newNow.getHours() * 60 * 60;
+        let minute = newNow.getMinutes() * 60;
+        let second = newNow.getSeconds();
+        let newTimePassed = day + hour + minute + second;
+
+        // Checking if timePassed is valid, if user wasn't focusing this tab timePassed+= 0.1 wasn't working so time froze
+        if (newTimePassed > Math.ceil(timePassed)) {
+            timePassed = newTimePassed;
+        }
+        
+    }, 10000);
+
     setInterval(() => {
         timePassed += 0.1;
-        let procentPassed = (timePassed/2592000*100).toFixed(5);
-        let procentRemain = (100 - procentPassed).toFixed(5);
+        procentPassed = (timePassed/2592000*100).toFixed(5);
+        procentRemain = (100 - procentPassed).toFixed(5);
         progressBar.style.width = procentPassed + "%";
         progressBar.innerHTML = procentPassed + "%";
         progressBarRemain.style.width = procentRemain + "%";
         progressBarRemain.innerHTML = procentRemain + "%";
+
     }, 100);
 
-
-
 }
+
+
+
+

@@ -1,5 +1,14 @@
+$desktop: 840px;
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
 * {
   font-family: "Calibri";
+  color: white;
 }
 
 h1 {
@@ -8,10 +17,6 @@ h1 {
 
 body {
   background-color: rgb(73, 72, 72);
-}
-
-.progress-bar {
-  font-size: 1.7em;
 }
 
 .progress {
@@ -25,4 +30,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include desktop {
+    font-size: 1.7em;
+  }
+}
+
+header {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  i {
+    color: white;
+    font-size: 3em;
+  }
+  a:hover {
+    opacity: 0.5;
+    transition: 200ms;
+  }
 }
