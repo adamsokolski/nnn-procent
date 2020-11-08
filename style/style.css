@@ -1,0 +1,35 @@
+* {
+  font-family: "Calibri";
+}
+
+h1 {
+  color: white;
+}
+
+body {
+  background-color: #494848;
+}
+
+.progress-bar {
+  font-size: 1.7em;
+}
+
+.progress {
+  height: 50px;
+}
+
+.progress-bar {
+  text-shadow: 2px 2px 0 #7a7a7a;
+  color: white;
+  font-size: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=style.css.map */
