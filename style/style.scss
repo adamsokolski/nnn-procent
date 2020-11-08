@@ -11,12 +11,39 @@ $desktop: 840px;
   color: white;
 }
 
-h1 {
-  color: white;
-}
-
 body {
   background-color: rgb(73, 72, 72);
+}
+
+.container {
+  .days {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    justify-items: center;
+    align-items: center;
+    grid-gap: 5px;
+
+    @include desktop {
+      display: none;
+    }
+
+    .day {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(53, 52, 52);
+    }
+  }
+
+  #days-passed {
+    font-size: 1.3em;
+    margin-top: 10px;
+    @include desktop {
+      display: none;
+    }
+  }
 }
 
 .progress {
@@ -32,7 +59,7 @@ body {
   justify-content: center;
 
   @include desktop {
-    font-size: 1.7em;
+    font-size: 1.4em;
   }
 }
 

@@ -1,5 +1,5 @@
 let now = new Date();
-let alertBox = document.querySelector('#alert-box');
+let daysPassedBox = document.querySelector('#days-passed');
 
 if (now.getMonth() == 10) {
     
@@ -15,6 +15,7 @@ if (now.getMonth() == 10) {
 
     let procentPassed;
     let procentRemain;
+    let daysPassed;
     
     setInterval(() => {
         let newNow = new Date();
@@ -35,6 +36,8 @@ if (now.getMonth() == 10) {
         timePassed += 0.1;
         procentPassed = (timePassed/2592000*100).toFixed(5);
         procentRemain = (100 - procentPassed).toFixed(5);
+        daysPassed = (timePassed/86400).toFixed(5);
+        daysPassedBox.innerHTML = daysPassed + " days";
         progressBar.style.width = procentPassed + "%";
         progressBar.innerHTML = procentPassed + "%";
         progressBarRemain.style.width = procentRemain + "%";
