@@ -3,7 +3,7 @@ let daysPassedBox = document.querySelector('#days-passed');
 
 if (now.getMonth() == 10) {
     
-    let day = now.getDate() * 60 * 60 * 24;
+    let day = (now.getDate() - 1) * 60 * 60 * 24;
     let hour = now.getHours() * 60 * 60;
     let minute = now.getMinutes() * 60;
     let second = now.getSeconds();
@@ -17,9 +17,10 @@ if (now.getMonth() == 10) {
     let procentRemain;
     let daysPassed;
     
+    
     setInterval(() => {
         let newNow = new Date();
-        let day = newNow.getDate() * 60 * 60 * 24;
+        let day = (now.getDate() - 1) * 60 * 60 * 24;
         let hour = newNow.getHours() * 60 * 60;
         let minute = newNow.getMinutes() * 60;
         let second = newNow.getSeconds();
